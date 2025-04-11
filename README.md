@@ -8,9 +8,11 @@ To design a Full Adder and Full Subtractor circuit and verify its truth table in
 
 **Equipments Required:**
 
-Hardware – PCs, Cyclone II , USB flasher
-
+```
 Software – Quartus prime
+modelism altera
+```
+
 
 **Full Adder and Full Subtractor**
 
@@ -37,20 +39,71 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+```
+```
+FULL ADDER
+![Screenshot 2025-04-11 015016](https://github.com/user-attachments/assets/c12b52f4-88e3-4d71-9d20-bc94825e32a1)
 
-**Procedure**
-
-Write the detailed procedure here
+FULL SUBTRACTOR
+![Screenshot 2025-04-11 015044](https://github.com/user-attachments/assets/98c996bd-983d-4d08-88f8-6e5d88142b7f)
+```
+```
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+```
+Developed by: PRIYA.B
+RegisterNumber: 212224230208
 */
+```
+
+```
+module EXP4(sum, cout, a, b, cin);
+output sum;
+output cout;
+input a;
+input b;
+input cin;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=a&b;
+assign w3=w1&cin;
+assign sum=w1^cin;
+assign cout=w2|w3;
+endmodule
+
+module EXP41(df, bo, a, b, bin);
+output df;
+output bo;
+input a;
+input b;
+input bin;
+wire w1,w2,w3;
+assign w1=a^b;
+assign w2=(~a&b);
+assign w3=(~w1&bin);
+assign df=w1^bin;
+assign bo=w2|w3;
+endmodule
+```
 
 **RTL Schematic**
+```
+```
+![Screenshot 2025-04-10 112849](https://github.com/user-attachments/assets/79c81dfd-cf30-4421-9aff-9363fafb1379)
+ ![Screenshot 2025-04-11 011304](https://github.com/user-attachments/assets/c65467af-a0e7-4678-8eae-361c6b17c047)
+```
+```
 
 **Output Timing Waveform**
+```
+```
+![Screenshot 2025-04-10 113438](https://github.com/user-attachments/assets/158a6c5c-1769-4103-9e2b-dd816f281b35)
 
+ ![Screenshot 2025-04-11 011510](https://github.com/user-attachments/assets/980f31cc-3f16-4f97-a529-a84035e71385)
+```
+```
 **Result:**
 
 Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
